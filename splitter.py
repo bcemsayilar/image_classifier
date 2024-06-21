@@ -25,7 +25,7 @@ for class_folder in os.listdir(dataset_path):
     test_files = files[split_index:]
 
     os.makedirs(os.path.join(train_path, class_folder), exist_ok=True)
-    os.makedirs(os.path.join(train_path, class_folder), exist_ok=True)
+    os.makedirs(os.path.join(test_path, class_folder), exist_ok=True)
 
     for f in train_files:
         shutil.copy2(
