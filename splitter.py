@@ -14,7 +14,7 @@ for class_folder in os.listdir(dataset_path):
     class_path = os.path.join(dataset_path, class_folder)
 
     if not os.path.isdir(class_path):
-        continue
+        continue # sonrakine geç
 
     files = [f for f in os.listdir(class_path) if os.path.isfile(os.path.join(class_path, f))]
 

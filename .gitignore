@@ -97,6 +97,7 @@ dmypy.json
 node_modules/
 *.log
 *.tmp
+*.pth
 .DS_Store
 
 # Ignore JetBrains IDE project files
