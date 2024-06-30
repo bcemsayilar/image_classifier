@@ -2,9 +2,9 @@ import os
 import random
 import shutil
 
-dataset_path = "./dataset"
-train_path = "model_dataset/train"
-test_path = "model_dataset/test"
+dataset_path = "./animal_dataset"
+train_path = "animal_model_dataset/train"
+test_path = "animal_model_dataset/test"
 split_ratio = 0.8
 
 os.makedirs(train_path, exist_ok=True)

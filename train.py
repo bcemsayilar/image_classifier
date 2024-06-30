@@ -11,9 +11,9 @@ from data_model import ExampleDataset
 from model import ExampleModel
 
 # Paths
-train_folder = "./model_dataset/train"
-valid_folder = "./model_dataset/test"
-test_folder = "./model_dataset/test"
+train_folder = "./animal_model_dataset/train"
+valid_folder = "./animal_model_dataset/test"
+test_folder = "./animal_model_dataset/test"
 
 # Configs
 num_classes = 4
