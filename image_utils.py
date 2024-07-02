@@ -110,7 +110,7 @@ def save_image(image, save_path):
     logging.info(f"Saved image to {save_path}")
 
 
-def create_drectory(dir_path):
+def create_directory(dir_path):
     if not os.path.isdir(dir_path):
         os.makedirs(dir_path)
         print(f"Directory created: {dir_path}")
@@ -119,10 +119,56 @@ def create_drectory(dir_path):
 
 
 def save_images_to_dir(images, dir_path):
-    create_drectory(dir_path)
+    create_directory(dir_path)
     check_is_dir(dir_path)
 
     for idx, image in tqdm(enumerate(images, 1)):
         save_path = os.path.join(dir_path, f"Image_{idx}.png")
         save_image(image, save_path)
     return True
+
+def plot_image(image):
+    plt.imshow(image)
+    plt.axis("off")
+    plt.show()
+
+def center_crop(image, new_width, new_height):
+    width, height = image.size
+    left = (width - new_width) / 2
+    top = (height - new_height) / 2
+    right = (width + new_width) / 2
+    bottom = (height + new_height) / 2
+    cropped_image = image.crop((left, top, right, bottom))
+    logging.info(f"Center cropped image to {new_width} x {new_height}")
+    return cropped_image
+
+# Clustering Function
+def calculate_pca(embeddings, dim=16):
+    """
+    Bu fonksiyon embeddinglere boyut indirgeme gerçekleştirir.
+    restnetten çıkan embeddingslerimiz size 512 idi.
+    boyutları düştükçe clustering yapmak rahat olacak.
+    Curse of Dimentionality - boyut arttıkça matematik işlem artacak.
+    :param embeddings:
+    :param dim:
+    :return:
+    """
+    print("Calculating PCA")
+    pca = PCA(n_components=dim)
+    pca_embeddings = pca.fit_transform(embeddings.squeeze())
+    # embeddingler tensor halinde saklandığı için o başındak (?) kısmı squeeze ile kırpıyoruz.
+    print("PCA calculating done!")
+    return pca_embeddings
+
+def calculate_kmeans(embeddings, k):
+    print("Kmeans processing.")
+    centroid, labels = kmeans2(data=embeddings, k=k, minit="points")
+    counts = np.bincount(labels)
+    print("Kmeans done!")
+    return centroid, labels
+
+def load_embeddings(file_path):
+    embeddings = pd.read_csv(file_path)
+    file_paths = embeddings["filepaths"]
+    embeddings = embeddings.drop("filepaths", axis=1)
+    return embeddings.values, file_paths
