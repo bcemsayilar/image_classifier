@@ -71,7 +71,7 @@ Install dependencies
 
 
 Getting Dataset with Kaggle API
-- 
+-
 [Kaggle API doc] (https://www.kaggle.com/docs/api)
 ```bash
  pip install -q kaggle
@@ -85,29 +85,33 @@ kaggle datasets download -d 'muffin-vs-chihuahua-image-classification'
 ```
 
 Preprocess images
-
+-
 ```bash
   python preprocess.py --raw_dir ./dog_muffin --processed_dir ./processed_dog_muffin
 ```
 
 Get embeddings
+-
 ```bash
   python get_embeddings --processed_images_dir ./processed_dog_muffin/dog --dir_name ./dog
   python get_embeddings --processed_images_dir ./processed_dog_muffin/muffin --dir_name ./muffin
 ```
 
 Clustering for removal
+-
 ```bash
   python clustering.py --embedding_dir ./embeddings_dog_muffin --csv_name dog
   python clustering.py --embedding_dir ./embeddings_dog_muffin --csv_name muffin
 ```
 
 Split dataset into train and test
+-
 ```bash
   python splitter.py --dataset_path ./dog_muffin
 ```
 
 Start training
+-
 ```bash
  python train.py --model_dataset_name dogmuffin_model_dataset --dir_name dogmuffin
 ```
