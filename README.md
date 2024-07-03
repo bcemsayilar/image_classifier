@@ -1,4 +1,4 @@
-# Classifier with Torch
+# Classifier with PyTorch
 
 This project is designed to classify images using convolutional neural networks (CNNs), with PyTorch.  It also includes simple and effective preprocessing, generic clustering with PCA and kmeans, embedding with Img2Vec and splitting functions. The project is useful for data scientists and machine learning engineers looking to implement image classification and clustering models and deploy it for test to gradio with ease.
 Huge thanks to [cobanov](https://github.com/cobanov) for [Superpeer course](https://superpeer.com/cobanov/collection/kendi-siniflandiricinizi-egitin)
