@@ -72,7 +72,7 @@ Install dependencies
 
 Getting Dataset with Kaggle API
 -
-[Kaggle API doc] (https://www.kaggle.com/docs/api)
+[Kaggle API doc](https://www.kaggle.com/docs/api)
 ```bash
  pip install -q kaggle
  mkdir ~/.kaggle
