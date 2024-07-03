@@ -78,7 +78,7 @@ Getting Dataset with Kaggle API
  mkdir ~/.kaggle
  cp kaggle.json ~/.kaggle/
  chmod 600 ~/.kaggle/kaggle.json
-``
+```
 
 ```bash
 kaggle datasets download -d 'muffin-vs-chihuahua-image-classification'
