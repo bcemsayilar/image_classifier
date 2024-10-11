@@ -40,7 +40,7 @@ fonttools==4.53.0
 fqdn @ file:///home/conda/feedstock_root/build_artifacts/fqdn_1638810296540/work/dist
 fsspec==2024.6.0
 gmpy2 @ file:///Users/runner/miniforge3/conda-bld/gmpy2_1715527339167/work
-gradio==4.36.1
+gradio==5.0.0
 gradio_client==1.0.1
 h11 @ file:///home/conda/feedstock_root/build_artifacts/h11_1664132893548/work
 h2 @ file:///home/conda/feedstock_root/build_artifacts/h2_1634280454336/work
