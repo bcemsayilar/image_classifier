@@ -160,7 +160,7 @@ tinycss2 @ file:///home/conda/feedstock_root/build_artifacts/tinycss2_1713974937
 tomli @ file:///home/conda/feedstock_root/build_artifacts/tomli_1644342247877/work
 tomlkit==0.12.0
 toolz==0.12.1
-torch==2.2.2
+torch==2.7.0
 torchaudio==2.2.2
 torchvision==0.17.2
 tornado @ file:///Users/runner/miniforge3/conda-bld/tornado_1717722665961/work
